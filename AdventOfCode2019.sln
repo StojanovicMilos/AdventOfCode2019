@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1TheTyrannyOfTheRocketEquation", "Day1TheTyrannyOfTheRocketEquation\Day1TheTyrannyOfTheRocketEquation.csproj", "{22802B2A-11F2-4238-AFBF-EB208E3729CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day1TheTyrannyOfTheRocketEquation", "Day1TheTyrannyOfTheRocketEquation\Day1TheTyrannyOfTheRocketEquation.csproj", "{22802B2A-11F2-4238-AFBF-EB208E3729CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day1TheTyrannyOfTheRocketEquation.Tests", "Day1TheTyrannyOfTheRocketEquation.Tests\Day1TheTyrannyOfTheRocketEquation.Tests.csproj", "{14AB506F-3477-4977-8794-BC431B5FB10A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day1TheTyrannyOfTheRocketEquation.Tests", "Day1TheTyrannyOfTheRocketEquation.Tests\Day1TheTyrannyOfTheRocketEquation.Tests.csproj", "{14AB506F-3477-4977-8794-BC431B5FB10A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day21202ProgramAlarm", "Day21202ProgramAlarm\Day21202ProgramAlarm.csproj", "{2476F6F2-89EA-4279-AA8F-90D53D8919ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day21202ProgramAlarm.Tests", "Day21202ProgramAlarm.Tests\Day21202ProgramAlarm.Tests.csproj", "{570796D4-BD64-441D-A055-25A60A079502}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{14AB506F-3477-4977-8794-BC431B5FB10A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14AB506F-3477-4977-8794-BC431B5FB10A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14AB506F-3477-4977-8794-BC431B5FB10A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2476F6F2-89EA-4279-AA8F-90D53D8919ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2476F6F2-89EA-4279-AA8F-90D53D8919ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2476F6F2-89EA-4279-AA8F-90D53D8919ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2476F6F2-89EA-4279-AA8F-90D53D8919ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570796D4-BD64-441D-A055-25A60A079502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570796D4-BD64-441D-A055-25A60A079502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570796D4-BD64-441D-A055-25A60A079502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570796D4-BD64-441D-A055-25A60A079502}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
