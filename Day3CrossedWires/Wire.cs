@@ -1,20 +1,17 @@
-﻿namespace Day3CrossedWires
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Day3CrossedWires
 {
     public class Wire
     {
-        public bool IsHorizontal { get; set; }
-        public bool IsVertical { get; set; }
+        private readonly IEnumerable<WireStepPoint> _wireStepPoints;
 
-        public bool IsCrossedWire => IsHorizontal && IsVertical;
-
-        public static Wire HorizontalWire() => new Wire(isHorizontal: true, isVertical: false);
-
-        public static Wire VerticalWire() => new Wire(isHorizontal: false, isVertical: true);
-
-        private Wire(bool isHorizontal, bool isVertical)
+        public Wire(IEnumerable<WireStepPoint> wireStepPoints)
         {
-            IsHorizontal = isHorizontal;
-            IsVertical = isVertical;
+            _wireStepPoints = wireStepPoints;
         }
+
+        public int LengthTo(Point point) => _wireStepPoints.TakeWhile(w => w.Point != point).Count() + 1;
     }
 }
