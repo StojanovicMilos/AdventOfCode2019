@@ -22,7 +22,7 @@ namespace Day4SecureContainer.Tests
         }
 
         [Theory]
-        [InlineData("254032-789860", 1033)]
+        [InlineData("254032-789860", 670)]
         public void DifferentCorrectPasswordCounterPart2Works(string range, int expectedResult)
         {
             //Arrange
