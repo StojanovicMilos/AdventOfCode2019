@@ -8,10 +8,10 @@ namespace Day4SecureContainer.Tests
         [InlineData(111111, true)]
         [InlineData(223450, false)]
         [InlineData(123789, false)]
-        public void CompositePasswordRulesWork(int password, bool expectedResult)
+        public void CompositePasswordRulesPart1Work(int password, bool expectedResult)
         {
             //Arrange
-            IPasswordRule composite = CompositePasswordRules.DefaultRules();
+            IPasswordRule composite = CompositePasswordRules.DefaultRulesPart1();
 
             //Act
             var actualResult = composite.IsValid(password);
@@ -20,5 +20,21 @@ namespace Day4SecureContainer.Tests
             Assert.Equal(expectedResult, actualResult);
         }
 
+
+        [Theory]
+        [InlineData(112233, true)]
+        [InlineData(123444, false)]
+        [InlineData(111122, true)]
+        public void CompositePasswordRulesPart2Work(int password, bool expectedResult)
+        {
+            //Arrange
+            IPasswordRule composite = CompositePasswordRules.DefaultRulesPart2();
+
+            //Act
+            var actualResult = composite.IsValid(password);
+
+            //Assert
+            Assert.Equal(expectedResult, actualResult);
+        }
     }
 }

@@ -14,9 +14,9 @@ namespace Day4SecureContainer
         public bool IsValid(int password) => password > 99999 && password < 1000000;
     }
 
-    public class TwoAdjacentDigits : IPasswordRule
+    public class TwoAdjacentDigitsPart1 : IPasswordRule
     {
-        public bool IsValid(int password)
+        public virtual bool IsValid(int password)
         {
             var digits = password.ToString().Select(p => p).ToArray();
 
@@ -28,6 +28,11 @@ namespace Day4SecureContainer
 
             return false;
         }
+    }
+
+    public class TwoAdjacentDigitsPart2 : TwoAdjacentDigitsPart1
+    {
+        public override bool IsValid(int password) => password.ToString().GroupBy(x => x).Select(g => g.Count()).Any(c => c == 2);
     }
 
     public class NonDecreasingDigits : IPasswordRule
@@ -50,12 +55,20 @@ namespace Day4SecureContainer
     {
         private readonly IEnumerable<IPasswordRule> _passwordRules;
 
-        public static CompositePasswordRules DefaultRules() =>
+        public static CompositePasswordRules DefaultRulesPart1() =>
             new CompositePasswordRules(new IPasswordRule[]
             {
                 new PasswordLength(),
-                new TwoAdjacentDigits(),
-                new NonDecreasingDigits()
+                new NonDecreasingDigits(),
+                new TwoAdjacentDigitsPart1()
+            });
+
+        public static IPasswordRule DefaultRulesPart2() =>
+            new CompositePasswordRules(new IPasswordRule[]
+            {
+                new PasswordLength(),
+                new NonDecreasingDigits(),
+                new TwoAdjacentDigitsPart2(),
             });
 
         public CompositePasswordRules(IEnumerable<IPasswordRule> passwordRules)
@@ -64,6 +77,8 @@ namespace Day4SecureContainer
         }
 
         public bool IsValid(int password) => _passwordRules.All(p => p.IsValid(password));
+
+        
     }
 
     public class DifferentCorrectPasswordCounter
