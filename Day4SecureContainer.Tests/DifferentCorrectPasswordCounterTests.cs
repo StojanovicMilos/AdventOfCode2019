@@ -12,7 +12,7 @@ namespace Day4SecureContainer.Tests
         public void DifferentCorrectPasswordCounterPart1Works(string range, int expectedResult)
         {
             //Arrange
-            DifferentCorrectPasswordCounter differentCorrectPasswordCounter = new DifferentCorrectPasswordCounter(CompositePasswordRules.DefaultRulesPart1());
+            DifferentCorrectPasswordCounter differentCorrectPasswordCounter = new DifferentCorrectPasswordCounter(CompositePasswordRules.RulesPart1());
 
             //Act
             var actualResult = differentCorrectPasswordCounter.CountPasswordsIn(range);
@@ -26,7 +26,7 @@ namespace Day4SecureContainer.Tests
         public void DifferentCorrectPasswordCounterPart2Works(string range, int expectedResult)
         {
             //Arrange
-            DifferentCorrectPasswordCounter differentCorrectPasswordCounter = new DifferentCorrectPasswordCounter(CompositePasswordRules.DefaultRulesPart2());
+            DifferentCorrectPasswordCounter differentCorrectPasswordCounter = new DifferentCorrectPasswordCounter(CompositePasswordRules.RulesPart2());
 
             //Act
             var actualResult = differentCorrectPasswordCounter.CountPasswordsIn(range);

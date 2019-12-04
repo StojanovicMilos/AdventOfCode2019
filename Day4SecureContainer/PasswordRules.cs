@@ -16,46 +16,24 @@ namespace Day4SecureContainer
 
     public class TwoAdjacentDigitsPart1 : IPasswordRule
     {
-        public virtual bool IsValid(int password)
-        {
-            var digits = password.ToString().Select(p => p).ToArray();
-
-            for (int i = 0; i < digits.Length - 1; i++)
-            {
-                if (digits[i] == digits[i + 1])
-                    return true;
-            }
-
-            return false;
-        }
+        public bool IsValid(int password) => password.ToString().GroupBy(c => c).Select(g => g.Count()).Any(c => c >= 2);
     }
 
-    public class TwoAdjacentDigitsPart2 : TwoAdjacentDigitsPart1
+    public class TwoAdjacentDigitsPart2 : IPasswordRule
     {
-        public override bool IsValid(int password) => password.ToString().GroupBy(x => x).Select(g => g.Count()).Any(c => c == 2);
+        public bool IsValid(int password) => password.ToString().GroupBy(c => c).Select(g => g.Count()).Any(c => c == 2);
     }
 
     public class NonDecreasingDigits : IPasswordRule
     {
-        public bool IsValid(int password)
-        {
-            var digits = password.ToString().Select(digit => int.Parse(digit.ToString())).ToArray();
-
-            for (int i = 0; i < digits.Length - 1; i++)
-            {
-                if (digits[i] > digits[i + 1])
-                    return false;
-            }
-
-            return true;
-        }
+        public bool IsValid(int password) => string.Concat(password.ToString().OrderBy(c => c)) == password.ToString();
     }
 
     public class CompositePasswordRules : IPasswordRule
     {
         private readonly IEnumerable<IPasswordRule> _passwordRules;
 
-        public static CompositePasswordRules DefaultRulesPart1() =>
+        public static CompositePasswordRules RulesPart1() =>
             new CompositePasswordRules(new IPasswordRule[]
             {
                 new PasswordLength(),
@@ -63,7 +41,7 @@ namespace Day4SecureContainer
                 new TwoAdjacentDigitsPart1()
             });
 
-        public static IPasswordRule DefaultRulesPart2() =>
+        public static IPasswordRule RulesPart2() =>
             new CompositePasswordRules(new IPasswordRule[]
             {
                 new PasswordLength(),
@@ -77,8 +55,6 @@ namespace Day4SecureContainer
         }
 
         public bool IsValid(int password) => _passwordRules.All(p => p.IsValid(password));
-
-        
     }
 
     public class DifferentCorrectPasswordCounter

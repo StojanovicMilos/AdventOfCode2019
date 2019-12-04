@@ -11,7 +11,7 @@ namespace Day4SecureContainer.Tests
         public void CompositePasswordRulesPart1Work(int password, bool expectedResult)
         {
             //Arrange
-            IPasswordRule composite = CompositePasswordRules.DefaultRulesPart1();
+            IPasswordRule composite = CompositePasswordRules.RulesPart1();
 
             //Act
             var actualResult = composite.IsValid(password);
@@ -28,7 +28,7 @@ namespace Day4SecureContainer.Tests
         public void CompositePasswordRulesPart2Work(int password, bool expectedResult)
         {
             //Arrange
-            IPasswordRule composite = CompositePasswordRules.DefaultRulesPart2();
+            IPasswordRule composite = CompositePasswordRules.RulesPart2();
 
             //Act
             var actualResult = composite.IsValid(password);
