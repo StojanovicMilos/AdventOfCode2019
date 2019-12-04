@@ -11,9 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day21202ProgramAlarm", "Day
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day21202ProgramAlarm.Tests", "Day21202ProgramAlarm.Tests\Day21202ProgramAlarm.Tests.csproj", "{570796D4-BD64-441D-A055-25A60A079502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3CrossedWires", "Day3CrossedWires\Day3CrossedWires.csproj", "{1D6CCA5A-0DCE-4C62-A0BE-B41353CC8592}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3CrossedWires", "Day3CrossedWires\Day3CrossedWires.csproj", "{1D6CCA5A-0DCE-4C62-A0BE-B41353CC8592}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3CrossedWires.Tests", "Day3CrossedWires.Tests\Day3CrossedWires.Tests.csproj", "{50AB58AE-10E6-49AF-8A2C-F15B1420B1E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day3CrossedWires.Tests", "Day3CrossedWires.Tests\Day3CrossedWires.Tests.csproj", "{50AB58AE-10E6-49AF-8A2C-F15B1420B1E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4SecureContainer", "Day4SecureContainer\Day4SecureContainer.csproj", "{478D48D5-34BF-4D03-8714-77F52FE3DC18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day4SecureContainer.Tests", "Day4SecureContainer.Tests\Day4SecureContainer.Tests.csproj", "{7CD3D4EB-A0AB-4581-9EEF-F51DD02FD505}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{50AB58AE-10E6-49AF-8A2C-F15B1420B1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50AB58AE-10E6-49AF-8A2C-F15B1420B1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50AB58AE-10E6-49AF-8A2C-F15B1420B1E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{478D48D5-34BF-4D03-8714-77F52FE3DC18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{478D48D5-34BF-4D03-8714-77F52FE3DC18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{478D48D5-34BF-4D03-8714-77F52FE3DC18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{478D48D5-34BF-4D03-8714-77F52FE3DC18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD3D4EB-A0AB-4581-9EEF-F51DD02FD505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD3D4EB-A0AB-4581-9EEF-F51DD02FD505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD3D4EB-A0AB-4581-9EEF-F51DD02FD505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD3D4EB-A0AB-4581-9EEF-F51DD02FD505}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
