@@ -10,7 +10,7 @@ namespace Day5SunnyWithAChanceOfAsteroids
             Memory memory = new Memory(cells);
 
             Instructions instructions = new Instructions(memory);
-            InstructionResult initial = InstructionResult.Initial();
+            InstructionResult initial = InstructionResult.NonBreakInstructionResult(5, 0);
 
             Console.WriteLine("Result =" + instructions.Execute(initial));
 

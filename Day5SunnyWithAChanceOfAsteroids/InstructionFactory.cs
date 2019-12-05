@@ -10,6 +10,10 @@ namespace Day5SunnyWithAChanceOfAsteroids
         private const int MultiplicationInstructionCode = 2;
         private const int InputInstructionCode = 3;
         private const int OutputInstructionCode = 4;
+        private const int JumpIfTrueInstructionCode = 5;
+        private const int JumpIfFalseInstruction = 6;
+        private const int LessThanInstruction = 7;
+        private const int EqualsInstruction = 8;
         private const int BreakInstructionCode = 99;
 
         private static readonly Dictionary<int, Func<int, int, int>> OperationFuncs = new Dictionary<int, Func<int, int, int>>
@@ -52,12 +56,23 @@ namespace Day5SunnyWithAChanceOfAsteroids
             int thirdByte = memory.GetNextByte();
             int secondOperand = FetchOperandFuncs[firstByteDigits[1]](memory, thirdByte);
 
+            if (instructionCode == JumpIfTrueInstructionCode)
+                return new JumpIfTrueInstruction(memory, firstOperand, secondOperand);
+            if (instructionCode == JumpIfFalseInstruction)
+                return new JumpIfFalseInstruction(memory, firstOperand, secondOperand);
+
             int fourthByte = memory.GetNextByte();
-            int resultAddress = fourthByte;
+            int thirdOperand = fourthByte;
+
+            if(instructionCode == LessThanInstruction)
+                return new LessThanInstruction(memory, firstOperand, secondOperand, thirdOperand);
+
+            if (instructionCode == EqualsInstruction)
+                return new EqualsInstruction(memory, firstOperand, secondOperand, thirdOperand);
 
             if (OperationFuncs.ContainsKey(instructionCode))
             {
-                return new FourByteInstruction(memory, firstOperand, secondOperand, resultAddress, SaveResultFuncs[firstByteDigits[0]], OperationFuncs[instructionCode]);
+                return new FourByteInstruction(memory, firstOperand, secondOperand, thirdOperand, SaveResultFuncs[firstByteDigits[0]], OperationFuncs[instructionCode]);
             }
 
             throw new Exception("unknown instruction code");

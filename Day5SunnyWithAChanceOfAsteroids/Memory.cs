@@ -29,6 +29,8 @@ namespace Day5SunnyWithAChanceOfAsteroids
             return nextByte;
         }
 
+        public void SetCurrentCellIndex(int newCellIndex) => _currentCellIndex = newCellIndex;
+
         public void SetCellAt(int index, int data) => _cells[index] = data;
 
         public int GetCellAt(int index) => _cells[index];
