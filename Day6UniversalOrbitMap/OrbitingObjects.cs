@@ -28,6 +28,19 @@ namespace Day6UniversalOrbitMap
             return _orbitingObjects[orbitingObjectKey];
         }
 
+        public int DistanceToSanta() => DistanceBetween(_orbitingObjects["YOU"], _orbitingObjects["SAN"]);
+
+        private static int DistanceBetween(ObjectOrbitsAround start, ObjectOrbitsAround end)
+        {
+
+            List<ObjectOrbitsAround> startAncestor = start.GetAncestor();
+            List<ObjectOrbitsAround> endAncestor = end.GetAncestor();
+
+            ObjectOrbitsAround commonAncestor = startAncestor.Intersect(endAncestor).First();
+
+            return startAncestor.IndexOf(commonAncestor) + endAncestor.IndexOf(commonAncestor);
+        }
+
         public int CountTotalNumberOfOrbits() => _orbitingObjects.Sum(o => o.Value.CountTotalNumberOfOrbits());
     }
 }
