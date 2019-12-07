@@ -2,6 +2,6 @@
 {
     public class BreakInstruction : IInstruction
     {
-        public InstructionResult Execute(InstructionResult instructionResult) => InstructionResult.BreakInstructionResult(instructionResult.Input, instructionResult.Output);
+        public InstructionResult Execute(InstructionResult instructionResult) => InstructionResult.BreakInstructionResult(instructionResult.Inputs, instructionResult.Output);
     }
 }

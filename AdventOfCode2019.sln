@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day6UniversalOrbitMap", "Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day6UniversalOrbitMap.Tests", "Day6UniversalOrbitMap.Tests\Day6UniversalOrbitMap.Tests.csproj", "{0E8F59D6-C018-4615-ADF1-9908460DF2EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day7AmplificationCircuit", "Day7AmplificationCircuit\Day7AmplificationCircuit.csproj", "{62839A16-6E61-4DB3-A629-37AA8345CEA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day7AmplificationCircuit.Tests", "Day7AmplificationCircuit.Tests\Day7AmplificationCircuit.Tests.csproj", "{09CC9321-1CE2-43CE-A7C8-00BACDA01059}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{0E8F59D6-C018-4615-ADF1-9908460DF2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E8F59D6-C018-4615-ADF1-9908460DF2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E8F59D6-C018-4615-ADF1-9908460DF2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62839A16-6E61-4DB3-A629-37AA8345CEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62839A16-6E61-4DB3-A629-37AA8345CEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62839A16-6E61-4DB3-A629-37AA8345CEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62839A16-6E61-4DB3-A629-37AA8345CEA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09CC9321-1CE2-43CE-A7C8-00BACDA01059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09CC9321-1CE2-43CE-A7C8-00BACDA01059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09CC9321-1CE2-43CE-A7C8-00BACDA01059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09CC9321-1CE2-43CE-A7C8-00BACDA01059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

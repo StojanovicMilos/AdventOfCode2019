@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Day5SunnyWithAChanceOfAsteroids
 {
@@ -16,8 +17,8 @@ namespace Day5SunnyWithAChanceOfAsteroids
 
         public InstructionResult Execute(InstructionResult instructionResult)
         {
-            _memory.SetCellAt(_firstOperand, instructionResult.Input);
-            return InstructionResult.NonBreakInstructionResult(0, instructionResult.Output);
+            _memory.SetCellAt(_firstOperand, instructionResult.Inputs.First());
+            return InstructionResult.NonBreakInstructionResult(instructionResult.Inputs.Skip(1).ToList(), instructionResult.Output);
         }
     }
 }

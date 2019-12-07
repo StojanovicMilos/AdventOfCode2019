@@ -15,7 +15,7 @@ namespace Day5SunnyWithAChanceOfAsteroids.Tests
             Instructions instructions = new Instructions(memory);
 
             //Act
-            var actualResult = instructions.Execute(initial);
+            var actualResult = instructions.Execute(initial).Output;
 
             //Assert
             Assert.Equal(expectedResult, actualResult);
