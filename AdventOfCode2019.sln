@@ -19,9 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day4SecureContainer", "Day4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day4SecureContainer.Tests", "Day4SecureContainer.Tests\Day4SecureContainer.Tests.csproj", "{7CD3D4EB-A0AB-4581-9EEF-F51DD02FD505}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5SunnyWithAChanceOfAsteroids", "Day5SunnyWithAChanceOfAsteroids\Day5SunnyWithAChanceOfAsteroids.csproj", "{A7C6E53E-F7BC-41EC-B145-3A076BC0861D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day5SunnyWithAChanceOfAsteroids", "Day5SunnyWithAChanceOfAsteroids\Day5SunnyWithAChanceOfAsteroids.csproj", "{A7C6E53E-F7BC-41EC-B145-3A076BC0861D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day5SunnyWithAChanceOfAsteroids.Tests", "Day5SunnyWithAChanceOfAsteroids.Tests\Day5SunnyWithAChanceOfAsteroids.Tests.csproj", "{90D1BDEC-8420-4FC5-9C04-F8CC5C2CE06C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day5SunnyWithAChanceOfAsteroids.Tests", "Day5SunnyWithAChanceOfAsteroids.Tests\Day5SunnyWithAChanceOfAsteroids.Tests.csproj", "{90D1BDEC-8420-4FC5-9C04-F8CC5C2CE06C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day6UniversalOrbitMap", "Day6UniversalOrbitMap\Day6UniversalOrbitMap.csproj", "{C1E4632C-4762-434A-9CD5-54A762C61F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day6UniversalOrbitMap.Tests", "Day6UniversalOrbitMap.Tests\Day6UniversalOrbitMap.Tests.csproj", "{0E8F59D6-C018-4615-ADF1-9908460DF2EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{90D1BDEC-8420-4FC5-9C04-F8CC5C2CE06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90D1BDEC-8420-4FC5-9C04-F8CC5C2CE06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90D1BDEC-8420-4FC5-9C04-F8CC5C2CE06C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E4632C-4762-434A-9CD5-54A762C61F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E4632C-4762-434A-9CD5-54A762C61F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E4632C-4762-434A-9CD5-54A762C61F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E4632C-4762-434A-9CD5-54A762C61F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E8F59D6-C018-4615-ADF1-9908460DF2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E8F59D6-C018-4615-ADF1-9908460DF2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E8F59D6-C018-4615-ADF1-9908460DF2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E8F59D6-C018-4615-ADF1-9908460DF2EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
