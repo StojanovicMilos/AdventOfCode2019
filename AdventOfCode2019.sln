@@ -23,13 +23,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day5SunnyWithAChanceOfAster
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day5SunnyWithAChanceOfAsteroids.Tests", "Day5SunnyWithAChanceOfAsteroids.Tests\Day5SunnyWithAChanceOfAsteroids.Tests.csproj", "{90D1BDEC-8420-4FC5-9C04-F8CC5C2CE06C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day6UniversalOrbitMap", "Day6UniversalOrbitMap\Day6UniversalOrbitMap.csproj", "{C1E4632C-4762-434A-9CD5-54A762C61F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day6UniversalOrbitMap", "Day6UniversalOrbitMap\Day6UniversalOrbitMap.csproj", "{C1E4632C-4762-434A-9CD5-54A762C61F9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day6UniversalOrbitMap.Tests", "Day6UniversalOrbitMap.Tests\Day6UniversalOrbitMap.Tests.csproj", "{0E8F59D6-C018-4615-ADF1-9908460DF2EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day6UniversalOrbitMap.Tests", "Day6UniversalOrbitMap.Tests\Day6UniversalOrbitMap.Tests.csproj", "{0E8F59D6-C018-4615-ADF1-9908460DF2EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day7AmplificationCircuit", "Day7AmplificationCircuit\Day7AmplificationCircuit.csproj", "{62839A16-6E61-4DB3-A629-37AA8345CEA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day7AmplificationCircuit", "Day7AmplificationCircuit\Day7AmplificationCircuit.csproj", "{62839A16-6E61-4DB3-A629-37AA8345CEA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day7AmplificationCircuit.Tests", "Day7AmplificationCircuit.Tests\Day7AmplificationCircuit.Tests.csproj", "{09CC9321-1CE2-43CE-A7C8-00BACDA01059}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day7AmplificationCircuit.Tests", "Day7AmplificationCircuit.Tests\Day7AmplificationCircuit.Tests.csproj", "{09CC9321-1CE2-43CE-A7C8-00BACDA01059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day8SpaceImageFormat", "Day8SpaceImageFormat\Day8SpaceImageFormat.csproj", "{F179ACD5-862F-4A4E-AB80-25BE99EF0397}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day8SpaceImageFormat.Tests", "Day8SpaceImageFormat.Tests\Day8SpaceImageFormat.Tests.csproj", "{E6ABF09D-8337-48AB-86B6-96BE3F4C70DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,14 @@ Global
 		{09CC9321-1CE2-43CE-A7C8-00BACDA01059}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09CC9321-1CE2-43CE-A7C8-00BACDA01059}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09CC9321-1CE2-43CE-A7C8-00BACDA01059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F179ACD5-862F-4A4E-AB80-25BE99EF0397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F179ACD5-862F-4A4E-AB80-25BE99EF0397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F179ACD5-862F-4A4E-AB80-25BE99EF0397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F179ACD5-862F-4A4E-AB80-25BE99EF0397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6ABF09D-8337-48AB-86B6-96BE3F4C70DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6ABF09D-8337-48AB-86B6-96BE3F4C70DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6ABF09D-8337-48AB-86B6-96BE3F4C70DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6ABF09D-8337-48AB-86B6-96BE3F4C70DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
