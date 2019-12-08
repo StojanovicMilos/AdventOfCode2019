@@ -38,7 +38,5 @@ namespace Day5SunnyWithAChanceOfAsteroids
         public int GetCellAt(int index) => _cells[index];
 
         public override string ToString() => string.Join(',', _cells.Select(c => c.ToString()));
-
-        
     }
 }

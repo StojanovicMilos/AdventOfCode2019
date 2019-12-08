@@ -14,11 +14,9 @@ namespace Day5SunnyWithAChanceOfAsteroids
 
         public InstructionResult Execute(InstructionResult instructionResult)
         {
-            //int i = 0;
             do
             {
                 var nextInstruction = InstructionFactory.CreateInstruction(_memory);
-                //Console.WriteLine("Executing instruction " + i++);
                 instructionResult = nextInstruction.Execute(instructionResult);
             } while (!instructionResult.IsBreakInstruction && !instructionResult.IsWaitingForInput);
 
