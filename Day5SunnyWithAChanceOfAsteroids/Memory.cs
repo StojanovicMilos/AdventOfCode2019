@@ -31,10 +31,14 @@ namespace Day5SunnyWithAChanceOfAsteroids
 
         public void SetCurrentCellIndex(int newCellIndex) => _currentCellIndex = newCellIndex;
 
+        public void SetCurrentCellIndexRelative(int delta) => SetCurrentCellIndex(_currentCellIndex + delta);
+
         public void SetCellAt(int index, int data) => _cells[index] = data;
 
         public int GetCellAt(int index) => _cells[index];
 
         public override string ToString() => string.Join(',', _cells.Select(c => c.ToString()));
+
+        
     }
 }

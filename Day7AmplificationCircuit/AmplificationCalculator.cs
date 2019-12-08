@@ -5,7 +5,7 @@ namespace Day7AmplificationCircuit
 {
     public static class AmplificationCalculator
     {
-        public static int CalculateAmplification(int[] cells, InstructionResult[] phaseSettings, InstructionResult initialInstruction)
+        public static InstructionResult CalculateAmplification(int[] cells, InstructionResult[] phaseSettings, InstructionResult initialInstruction)
         {
             int numberOfAmplifiers = phaseSettings.Length;
 
@@ -18,7 +18,16 @@ namespace Day7AmplificationCircuit
 
             Amplifiers amplifiers = new Amplifiers(instructions, phaseSettings);
 
-            return amplifiers.Amplify(initialInstruction).Output;
+            var output = amplifiers.Amplify(initialInstruction);
+            initialInstruction = InstructionResult.NonBreakInstructionResult(output.Output, 0);
+
+            while (!output.IsBreakInstruction)
+            {
+                output = amplifiers.AmplifyWithoutPhaseSettings(initialInstruction);
+                initialInstruction = InstructionResult.NonBreakInstructionResult(output.Output, 0);
+            }
+
+            return output;
         }
 
         private static int[] CopyCells(int[] cells)

@@ -17,8 +17,13 @@ namespace Day5SunnyWithAChanceOfAsteroids
 
         public InstructionResult Execute(InstructionResult instructionResult)
         {
-            _memory.SetCellAt(_firstOperand, instructionResult.Inputs.First());
-            return InstructionResult.NonBreakInstructionResult(instructionResult.Inputs.Skip(1).ToList(), instructionResult.Output);
+            if (instructionResult.Inputs.Any())
+            {
+                _memory.SetCellAt(_firstOperand, instructionResult.Inputs.First());
+                return InstructionResult.NonBreakInstructionResult(instructionResult.Inputs.Skip(1).ToList(), instructionResult.Output);
+            }
+            _memory.SetCurrentCellIndexRelative(-2);
+            return InstructionResult.WaitingForInputInstructionResult(instructionResult.Output);
         }
     }
 }

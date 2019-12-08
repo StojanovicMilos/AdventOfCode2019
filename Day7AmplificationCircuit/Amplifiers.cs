@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Day5SunnyWithAChanceOfAsteroids;
 
 namespace Day7AmplificationCircuit
@@ -20,10 +21,32 @@ namespace Day7AmplificationCircuit
         public InstructionResult Amplify(InstructionResult input)
         {
             InstructionResult output = null;
+
             for (int i = 0; i < _instructions.Length; i++)
             {
                 output = _instructions[i].Execute(InstructionResult.JoinResults(_phaseSettings[i], input));
                 input = InstructionResult.NonBreakInstructionResult(output.Output, 0);
+            }
+
+            while (_instructions.Any(instruction => !instruction.IsFinished))
+            {
+                foreach (var instruction in _instructions)
+                {
+                    output = instruction.Execute(input);
+                    input = InstructionResult.NonBreakInstructionResult(output.Output, 0);
+                }
+            }
+
+            return output;
+        }
+
+        public InstructionResult AmplifyWithoutPhaseSettings(InstructionResult input)
+        {
+            InstructionResult output = null;
+            foreach (var instruction in _instructions)
+            {
+                output = instruction.Execute(input);
+                input = InstructionResult.NonBreakInstructionResult(output.Output,0);
             }
 
             return output;

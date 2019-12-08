@@ -64,7 +64,7 @@ namespace Day5SunnyWithAChanceOfAsteroids
             int fourthByte = memory.GetNextByte();
             int thirdOperand = fourthByte;
 
-            if(instructionCode == LessThanInstruction)
+            if (instructionCode == LessThanInstruction)
                 return new LessThanInstruction(memory, firstOperand, secondOperand, thirdOperand);
 
             if (instructionCode == EqualsInstruction)

@@ -14,7 +14,7 @@ namespace Day7AmplificationCircuit.Tests
             //Arrange
 
             //Act
-            var actualResult = AmplificationCalculator.CalculateAmplification(cells, phaseSettings, initialInstruction);
+            var actualResult = AmplificationCalculator.CalculateAmplification(cells, phaseSettings, initialInstruction).Output;
 
             //Assert
             Assert.Equal(expectedResult, actualResult);
@@ -60,6 +60,30 @@ namespace Day7AmplificationCircuit.Tests
                     InstructionResult.NonBreakInstructionResult(2, 0)
                 },
                 InstructionResult.NonBreakInstructionResult(0, 0), 65210
+            };
+            yield return new object[]
+            {
+                new[] {3,26,1001,26,-4,26,3,27,1002,27,2,27,1,27,26,27,4,27,1001,28,-1,28,1005,28,6,99,0,0,5}, new[]
+                {
+                    InstructionResult.NonBreakInstructionResult(9, 0),
+                    InstructionResult.NonBreakInstructionResult(8, 0),
+                    InstructionResult.NonBreakInstructionResult(7, 0),
+                    InstructionResult.NonBreakInstructionResult(6, 0),
+                    InstructionResult.NonBreakInstructionResult(5, 0)
+                },
+                InstructionResult.NonBreakInstructionResult(0, 0), 139629729
+            };
+            yield return new object[]
+            {
+                new[] {3,52,1001,52,-5,52,3,53,1,52,56,54,1007,54,5,55,1005,55,26,1001,54,-5,54,1105,1,12,1,53,54,53,1008,54,0,55,1001,55,1,55,2,53,55,53,4,53,1001,56,-1,56,1005,56,6,99,0,0,0,0,10}, new[]
+                {
+                    InstructionResult.NonBreakInstructionResult(9, 0),
+                    InstructionResult.NonBreakInstructionResult(7, 0),
+                    InstructionResult.NonBreakInstructionResult(8, 0),
+                    InstructionResult.NonBreakInstructionResult(5, 0),
+                    InstructionResult.NonBreakInstructionResult(6, 0)
+                },
+                InstructionResult.NonBreakInstructionResult(0, 0), 18216
             };
         }
 
