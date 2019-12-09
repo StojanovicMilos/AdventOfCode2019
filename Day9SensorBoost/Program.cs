@@ -12,7 +12,7 @@ namespace Day9SensorBoost
             Memory memory = new Memory(cells);
 
             Instructions instructions = new Instructions(memory);
-            InstructionResult initial = InstructionResult.NonBreakInstructionResult(1, 0);
+            InstructionResult initial = InstructionResult.NonBreakInstructionResult(2, 0);
 
             Console.WriteLine("Result = " + instructions.Execute(initial).Output);
         }
