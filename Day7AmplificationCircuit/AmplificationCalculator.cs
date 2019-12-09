@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Numerics;
 using Day5SunnyWithAChanceOfAsteroids;
 
 namespace Day7AmplificationCircuit
 {
     public static class AmplificationCalculator
     {
-        public static InstructionResult CalculateAmplification(int[] cells, InstructionResult[] phaseSettings, InstructionResult initialInstruction)
+        public static InstructionResult CalculateAmplification(BigInteger[] cells, InstructionResult[] phaseSettings, InstructionResult initialInstruction)
         {
             int numberOfAmplifiers = phaseSettings.Length;
 
@@ -30,9 +31,9 @@ namespace Day7AmplificationCircuit
             return output;
         }
 
-        private static int[] CopyCells(int[] cells)
+        private static BigInteger[] CopyCells(BigInteger[] cells)
         {
-            int[] memoryCells = new int[cells.Length];
+            BigInteger[] memoryCells = new BigInteger[cells.Length];
             Array.Copy(cells, memoryCells, cells.Length);
             return memoryCells;
         }

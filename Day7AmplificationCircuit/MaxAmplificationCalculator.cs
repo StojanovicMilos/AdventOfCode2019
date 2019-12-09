@@ -1,12 +1,13 @@
-﻿using Day5SunnyWithAChanceOfAsteroids;
+﻿using System.Numerics;
+using Day5SunnyWithAChanceOfAsteroids;
 
 namespace Day7AmplificationCircuit
 {
     public static class MaxAmplificationCalculator
     {
-        public static int CalculateMaxAmplification(int phaseSettingsMin, int phaseSettingsMax, int[] cells, InstructionResult initialInstructionResult)
+        public static BigInteger CalculateMaxAmplification(int phaseSettingsMin, int phaseSettingsMax, BigInteger[] cells, InstructionResult initialInstructionResult)
         {
-            int maxAmplification = int.MinValue;
+            BigInteger maxAmplification = int.MinValue;
             int numberOfAmplifiers = phaseSettingsMax - phaseSettingsMin + 1;
             foreach (var permutation in GetPermutations(phaseSettingsMin, numberOfAmplifiers))
             {
@@ -16,7 +17,7 @@ namespace Day7AmplificationCircuit
                     phaseSettings[i] = InstructionResult.NonBreakInstructionResult(permutation[i], 0);
                 }
 
-                int result = AmplificationCalculator.CalculateAmplification(cells, phaseSettings, initialInstructionResult).Output;
+                BigInteger result = AmplificationCalculator.CalculateAmplification(cells, phaseSettings, initialInstructionResult).Output;
                 if (result > maxAmplification)
                     maxAmplification = result;
             }

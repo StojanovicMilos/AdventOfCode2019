@@ -1,19 +1,19 @@
 ﻿using System;
+using System.Numerics;
 
 namespace Day5SunnyWithAChanceOfAsteroids
 {
     public class FourByteInstruction : IInstruction
     {
         private readonly Memory _memory;
-        private readonly int _firstOperand;
-        private readonly int _secondOperand;
-        private readonly int _thirdOperand;
-        private readonly Action<Memory, int, int> _saveResult;
-        private readonly Func<int, int, int> _operation;
+        private readonly BigInteger _firstOperand;
+        private readonly BigInteger _secondOperand;
+        private readonly BigInteger _thirdOperand;
+        private readonly Action<Memory, BigInteger, BigInteger> _saveResult;
+        private readonly Func<BigInteger, BigInteger, BigInteger> _operation;
 
-        public FourByteInstruction(Memory memory, int firstOperand, int secondOperand, int thirdOperand, Action<Memory, int, int> saveResult, Func<int, int, int> operation)
+        public FourByteInstruction(Memory memory, BigInteger firstOperand, BigInteger secondOperand, BigInteger thirdOperand, Action<Memory, BigInteger, BigInteger> saveResult, Func<BigInteger, BigInteger, BigInteger> operation)
         {
-            if (thirdOperand < 0) throw new ArgumentOutOfRangeException(nameof(thirdOperand));
             _memory = memory ?? throw new ArgumentNullException(nameof(memory));
             _firstOperand = firstOperand;
             _secondOperand = secondOperand;

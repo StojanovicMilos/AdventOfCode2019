@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Numerics;
 
 namespace Day5SunnyWithAChanceOfAsteroids
 {
     public class JumpIfFalseInstruction : IInstruction
     {
         private readonly Memory _memory;
-        private readonly int _firstOperand;
-        private readonly int _secondOperand;
+        private readonly BigInteger _firstOperand;
+        private readonly BigInteger _secondOperand;
 
 
-        public JumpIfFalseInstruction(Memory memory, int firstOperand, int secondOperand)
+        public JumpIfFalseInstruction(Memory memory, BigInteger firstOperand, BigInteger secondOperand)
         {
             _memory = memory ?? throw new ArgumentNullException(nameof(memory));
             _firstOperand = firstOperand;

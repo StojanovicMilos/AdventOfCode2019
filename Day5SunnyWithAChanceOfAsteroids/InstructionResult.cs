@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace Day5SunnyWithAChanceOfAsteroids
 {
@@ -7,14 +8,14 @@ namespace Day5SunnyWithAChanceOfAsteroids
     {
         public static InstructionResult Initial() => NonBreakInstructionResult(1, 0);
 
-        public static InstructionResult NonBreakInstructionResult(int input, int output) => NonBreakInstructionResult(new List<int> {input}, output);
-        public static InstructionResult NonBreakInstructionResult(List<int> input, int output) => new InstructionResult(input, output, false, false);
+        public static InstructionResult NonBreakInstructionResult(BigInteger input, BigInteger output) => NonBreakInstructionResult(new List<BigInteger> {input}, output);
+        public static InstructionResult NonBreakInstructionResult(List<BigInteger> input, BigInteger output) => new InstructionResult(input, output, false, false);
 
-        public static InstructionResult WaitingForInputInstructionResult(int output) => new InstructionResult(new List<int>(), output, false, true);
+        public static InstructionResult WaitingForInputInstructionResult(BigInteger output) => new InstructionResult(new List<BigInteger>(), output, false, true);
 
-        public static InstructionResult BreakInstructionResult(List<int> input, int output) => new InstructionResult(input, output, true, false);
+        public static InstructionResult BreakInstructionResult(List<BigInteger> input, BigInteger output) => new InstructionResult(input, output, true, false);
 
-        private InstructionResult(List<int> input, int output, bool isBreakInstruction, bool isWaitingForInput)
+        private InstructionResult(List<BigInteger> input, BigInteger output, bool isBreakInstruction, bool isWaitingForInput)
         {
             Inputs = input;
             Output = output;
@@ -22,8 +23,8 @@ namespace Day5SunnyWithAChanceOfAsteroids
             IsWaitingForInput = isWaitingForInput;
         }
 
-        public List<int> Inputs { get; }
-        public int Output { get; }
+        public List<BigInteger> Inputs { get; }
+        public BigInteger Output { get; }
 
         public bool IsBreakInstruction { get; }
 
