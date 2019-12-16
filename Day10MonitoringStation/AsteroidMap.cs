@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Day10MonitoringStation
 {
     public class AsteroidMap
     {
-        private readonly Asteroid[] _map;
+        private readonly List<Asteroid> _map;
 
         public AsteroidMap(string input)
         {
@@ -13,7 +14,9 @@ namespace Day10MonitoringStation
             _map = AsteroidMapInitializer.InitializeMap(asteroids);
         }
 
-        public string GetBestStationCoordinates() => _map.WithMaximum(GetNumberOfVisibleAsteroids).ToString();
+        private Asteroid GetBestStation() => _map.WithMaximum(GetNumberOfVisibleAsteroids);
+
+        public string GetBestStationCoordinates() => GetBestStation().ToString();
 
         public int GetNumberOfVisibleAsteroids(Asteroid asteroid) => _map.Count(a => AsteroidsVisible(a, asteroid));
 
@@ -44,6 +47,45 @@ namespace Day10MonitoringStation
             }
 
             return true;
+        }
+
+        private int BiggestXCoordinate => _map.WithMaximum(a => Math.Abs(a.X)).X;
+        private int BiggestYCoordinate => _map.WithMaximum(a => Math.Abs(a.Y)).Y;
+        private int BiggestCoordinate => Math.Max(BiggestXCoordinate, BiggestYCoordinate);
+
+        public IEnumerable<Asteroid> VaporizeAsteroids()
+        {
+            AngleHelper angleHelper = new AngleHelper(BiggestXCoordinate, BiggestYCoordinate);
+            var station = GetBestStation();
+            while (_map.Count > 1)
+            {
+                var nextAngle = angleHelper.GetNextAngle();
+                if (TryGetAsteroidAtAngle(station, nextAngle, out var asteroid))
+                {
+                    _map.Remove(asteroid);
+                    yield return asteroid;
+                }
+            }
+        }
+
+        private bool TryGetAsteroidAtAngle(Asteroid station, DeltaAngle nextAngle, out Asteroid asteroid)
+        {
+            for (int i = 1; i < BiggestCoordinate; i++)
+            {
+                int potentialAsteroidAtAngleX = station.X + nextAngle.Y * i;    //TODO rework??? explanation: coordinates in advent of code are vice versa, so angles have to be vice versa too... Just change X and Y value when generating angles...
+                int potentialAsteroidAtAngleY = station.Y + nextAngle.X * i;
+
+                Asteroid potentialAsteroidAtAngle = _map.FirstOrDefault(a => a.X == potentialAsteroidAtAngleX && a.Y == potentialAsteroidAtAngleY);
+
+                if (potentialAsteroidAtAngle != null)
+                {
+                    asteroid = potentialAsteroidAtAngle;
+                    return true;
+                }
+            }
+
+            asteroid = null;
+            return false;
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Day10MonitoringStation
 {
     public static class AsteroidMapInitializer
     {
-        public static Asteroid[] InitializeMap(char[][] asteroids)
+        public static List<Asteroid> InitializeMap(char[][] asteroids)
         {
             List<Asteroid> map = new List<Asteroid>();
 
@@ -19,7 +19,7 @@ namespace Day10MonitoringStation
                 }
             }
 
-            return map.ToArray();
+            return map;
         }
     }
 }
