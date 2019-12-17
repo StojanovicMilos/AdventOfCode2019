@@ -25,7 +25,7 @@ namespace Day7AmplificationCircuit
             for (int i = 0; i < _instructions.Length; i++)
             {
                 output = _instructions[i].Execute(InstructionResult.JoinResults(_phaseSettings[i], input));
-                input = InstructionResult.NonBreakInstructionResult(output.Output, 0);
+                input = InstructionResult.NonBreakInstructionResult(output.Output);
             }
 
             while (_instructions.Any(instruction => !instruction.IsFinished))
@@ -33,7 +33,7 @@ namespace Day7AmplificationCircuit
                 foreach (var instruction in _instructions)
                 {
                     output = instruction.Execute(input);
-                    input = InstructionResult.NonBreakInstructionResult(output.Output, 0);
+                    input = InstructionResult.NonBreakInstructionResult(output.Output);
                 }
             }
 
@@ -46,7 +46,7 @@ namespace Day7AmplificationCircuit
             foreach (var instruction in _instructions)
             {
                 output = instruction.Execute(input);
-                input = InstructionResult.NonBreakInstructionResult(output.Output,0);
+                input = InstructionResult.NonBreakInstructionResult(output.Output);
             }
 
             return output;

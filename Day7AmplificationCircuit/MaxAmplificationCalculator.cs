@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.Linq;
+using System.Numerics;
 using Day5SunnyWithAChanceOfAsteroids;
 
 namespace Day7AmplificationCircuit
@@ -14,10 +15,10 @@ namespace Day7AmplificationCircuit
                 InstructionResult[] phaseSettings = new InstructionResult[numberOfAmplifiers];
                 for (int i = 0; i < phaseSettings.Length; i++)
                 {
-                    phaseSettings[i] = InstructionResult.NonBreakInstructionResult(permutation[i], 0);
+                    phaseSettings[i] = InstructionResult.NonBreakInstructionResult(permutation[i]);
                 }
 
-                BigInteger result = AmplificationCalculator.CalculateAmplification(cells, phaseSettings, initialInstructionResult).Output;
+                var result = AmplificationCalculator.CalculateAmplification(cells, phaseSettings, initialInstructionResult).Output.First();
                 if (result > maxAmplification)
                     maxAmplification = result;
             }

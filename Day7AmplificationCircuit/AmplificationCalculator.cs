@@ -20,12 +20,12 @@ namespace Day7AmplificationCircuit
             Amplifiers amplifiers = new Amplifiers(instructions, phaseSettings);
 
             var output = amplifiers.Amplify(initialInstruction);
-            initialInstruction = InstructionResult.NonBreakInstructionResult(output.Output, 0);
+            initialInstruction = InstructionResult.NonBreakInstructionResult(output.Output);
 
             while (!output.IsBreakInstruction)
             {
                 output = amplifiers.AmplifyWithoutPhaseSettings(initialInstruction);
-                initialInstruction = InstructionResult.NonBreakInstructionResult(output.Output, 0);
+                initialInstruction = InstructionResult.NonBreakInstructionResult(output.Output);
             }
 
             return output;

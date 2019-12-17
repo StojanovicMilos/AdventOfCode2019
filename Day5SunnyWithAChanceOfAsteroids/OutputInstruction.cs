@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 
 namespace Day5SunnyWithAChanceOfAsteroids
@@ -13,8 +14,7 @@ namespace Day5SunnyWithAChanceOfAsteroids
 
         public InstructionResult Execute(InstructionResult instructionResult)
         {
-            Console.WriteLine("Output = " + _firstOperand);
-            return InstructionResult.NonBreakInstructionResult(instructionResult.Inputs, _firstOperand);
+            return InstructionResult.NonBreakInstructionResult(instructionResult.Inputs, instructionResult.Output.Concat(new List<BigInteger> {_firstOperand}).ToList());
         }
     }
 }
