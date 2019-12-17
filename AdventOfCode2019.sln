@@ -39,9 +39,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day9SensorBoost", "Day9Sens
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day9SensorBoost.Tests", "Day9SensorBoost.Tests\Day9SensorBoost.Tests.csproj", "{FED004E6-D47F-4A89-936C-84911D6463C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day10MonitoringStation.Tests", "Day10MonitoringStation.Tests\Day10MonitoringStation.Tests.csproj", "{F3D80540-363E-4755-BFC1-918F70980257}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day10MonitoringStation.Tests", "Day10MonitoringStation.Tests\Day10MonitoringStation.Tests.csproj", "{F3D80540-363E-4755-BFC1-918F70980257}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day10MonitoringStation", "Day10MonitoringStation\Day10MonitoringStation.csproj", "{3101D467-DDCE-40CF-8BD6-CB24E62A8AD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day10MonitoringStation", "Day10MonitoringStation\Day10MonitoringStation.csproj", "{3101D467-DDCE-40CF-8BD6-CB24E62A8AD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day11SpacePolice", "Day11SpacePolice\Day11SpacePolice.csproj", "{21FF66F7-61D5-4C21-9E69-95A4389D2FE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day11SpacePolice.Tests", "Day11SpacePolice.Tests\Day11SpacePolice.Tests.csproj", "{C6D9742A-06D8-4A1F-8528-406AEDED204D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +133,14 @@ Global
 		{3101D467-DDCE-40CF-8BD6-CB24E62A8AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3101D467-DDCE-40CF-8BD6-CB24E62A8AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3101D467-DDCE-40CF-8BD6-CB24E62A8AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21FF66F7-61D5-4C21-9E69-95A4389D2FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FF66F7-61D5-4C21-9E69-95A4389D2FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FF66F7-61D5-4C21-9E69-95A4389D2FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FF66F7-61D5-4C21-9E69-95A4389D2FE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6D9742A-06D8-4A1F-8528-406AEDED204D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6D9742A-06D8-4A1F-8528-406AEDED204D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6D9742A-06D8-4A1F-8528-406AEDED204D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6D9742A-06D8-4A1F-8528-406AEDED204D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
