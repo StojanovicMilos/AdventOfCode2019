@@ -4,64 +4,40 @@ namespace Day12TheNBodyProblem
 {
     public class Moon
     {
-        private readonly Coordinates _position;
-        private readonly Coordinates _velocity;
+        public Coordinates Position { get; }
+        public Coordinates Velocity { get; }
 
         public Moon(Coordinates position)
         {
-            _position = position ?? throw new ArgumentNullException(nameof(position));
-            _velocity = new Coordinates(0, 0, 0);
+            Position = position ?? throw new ArgumentNullException(nameof(position));
+
+            Velocity = new Coordinates(0, 0, 0);
         }
 
-        private int PotentialEnergy => _position.Energy;
-        private int KineticEnergy => _velocity.Energy;
-        public int TotalEnergy => PotentialEnergy * KineticEnergy;
+        public int TotalEnergy => Position.Energy * Velocity.Energy;
 
         public void UpdateVelocity(Moon[] otherMoons)
         {
             foreach (var otherMoon in otherMoons)
             {
-                UpdateVelocity(otherMoon._position);
+                UpdateVelocity(otherMoon.Position);
             }
         }
 
         private void UpdateVelocity(Coordinates otherMoonPosition)
         {
-            if (otherMoonPosition.X > _position.X)
-            {
-                _velocity.X++;
-            }
-            else if (otherMoonPosition.X < _position.X)
-            {
-                _velocity.X--;
-            }
-
-            if (otherMoonPosition.Y > _position.Y)
-            {
-                _velocity.Y++;
-            }
-            else if (otherMoonPosition.Y < _position.Y)
-            {
-                _velocity.Y--;
-            }
-
-            if (otherMoonPosition.Z > _position.Z)
-            {
-                _velocity.Z++;
-            }
-            else if (otherMoonPosition.Z < _position.Z)
-            {
-                _velocity.Z--;
-            }
+            Velocity.X += Math.Sign(otherMoonPosition.X - Position.X);
+            Velocity.Y += Math.Sign(otherMoonPosition.Y - Position.Y);
+            Velocity.Z += Math.Sign(otherMoonPosition.Z - Position.Z);
         }
 
         public void UpdatePosition()
         {
-            _position.X += _velocity.X;
-            _position.Y += _velocity.Y;
-            _position.Z += _velocity.Z;
+            Position.X += Velocity.X;
+            Position.Y += Velocity.Y;
+            Position.Z += Velocity.Z;
         }
 
-        public override string ToString() => $"pos={_position}, vel={_velocity}";
+        public string GetState() => $"pos={Position.GetState()}, vel={Velocity.GetState()}";
     }
 }

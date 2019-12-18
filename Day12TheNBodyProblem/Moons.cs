@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Linq;
+using System.Numerics;
 
 namespace Day12TheNBodyProblem
 {
     public class Moons
     {
         private readonly Moon[] _moons;
+        private readonly PeriodCounter _periodCounter;
 
         public Moons(Moon[] moons)
         {
             _moons = moons ?? throw new ArgumentNullException(nameof(moons));
+            _periodCounter = new PeriodCounter(_moons.Select(m => m.Position).ToList(), _moons.Select(m => m.Velocity).ToList());
         }
 
         public void PerformSteps(int numberOfSteps)
@@ -18,6 +21,17 @@ namespace Day12TheNBodyProblem
             {
                 PerformStep();
             }
+        }
+
+        public BigInteger GetNumberOfStepsNeededForStillState()
+        {
+            while (!_periodCounter.AchievedPeriod())
+            {
+                PerformStep();
+                UpdatePeriod();
+            }
+
+            return _periodCounter.Period();
         }
 
         private void PerformStep()
@@ -33,8 +47,10 @@ namespace Day12TheNBodyProblem
             }
         }
 
+        private void UpdatePeriod() => _periodCounter.UpdatePeriod();
+
         public int TotalEnergy() => _moons.Sum(m => m.TotalEnergy);
 
-        public override string ToString() => string.Join(Environment.NewLine, _moons.Select(m => m.ToString()));
+        public string GetState() => string.Join(Environment.NewLine, _moons.Select(m => m.GetState()));
     }
 }

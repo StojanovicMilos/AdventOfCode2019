@@ -17,6 +17,6 @@ namespace Day12TheNBodyProblem
 
         public int Energy => Math.Abs(X) + Math.Abs(Y) + Math.Abs(Z);
 
-        public override string ToString() => $"<x={X.ToString().PadLeft(3)}, y={Y.ToString().PadLeft(3)}, z={Z.ToString().PadLeft(3)}>";
+        public string GetState() => $"<x={X.ToString().PadLeft(3)}, y={Y.ToString().PadLeft(3)}, z={Z.ToString().PadLeft(3)}>";
     }
 }

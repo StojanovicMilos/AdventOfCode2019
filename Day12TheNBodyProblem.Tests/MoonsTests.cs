@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Xunit;
 
 namespace Day12TheNBodyProblem.Tests
@@ -16,7 +16,7 @@ namespace Day12TheNBodyProblem.Tests
 
             //Act
             moons.PerformSteps(numberOfSteps);
-            var actualState = moons.ToString();
+            var actualState = moons.GetState();
 
             //Assert
             Assert.Equal(expectedState.RemoveWhitespace(), actualState.RemoveWhitespace());
@@ -35,6 +35,20 @@ namespace Day12TheNBodyProblem.Tests
 
             //Assert
             Assert.Equal(expectedTotalEnergy, actualTotalEnergy);
+        }
+
+        [Theory]
+        [ClassData(typeof(MoonsGetNumberOfStepsNeededForStillStateTestData))]
+        public void MoonsGetNumberOfStepsNeededForStillStateWorks(string input, BigInteger expectedNumberOfSteps)
+        {
+            //Arrange
+            Moons moons = new Moons(MoonsInputParser.Parse(input));
+
+            //Act
+            BigInteger actualNumberOfSteps = moons.GetNumberOfStepsNeededForStillState();
+
+            //Assert
+            Assert.Equal(expectedNumberOfSteps, actualNumberOfSteps);
         }
     }
 
@@ -100,6 +114,32 @@ pos=<x= 1, y=-4, z= 2>, vel=<x=-1, y=-6, z= 2>"
                 TestDataConstants.Input3,
                 1000,
                 9958
+            };
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    }
+
+    public class MoonsGetNumberOfStepsNeededForStillStateTestData : IEnumerable<object[]>
+    {
+        public IEnumerator<object[]> GetEnumerator()
+        {
+            yield return new object[]
+            {
+                TestDataConstants.Input1,
+                new BigInteger(2772)
+            };
+
+            yield return new object[]
+            {
+                TestDataConstants.Input2,
+                new BigInteger(4686774924)
+            };
+
+            yield return new object[]
+            {
+                TestDataConstants.Input3,
+                new BigInteger(318382803780324)
             };
         }
 
