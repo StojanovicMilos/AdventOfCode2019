@@ -6,6 +6,7 @@ namespace Day5SunnyWithAChanceOfAsteroids
 {
     public class InstructionResult
     {
+        public static InstructionResult NonBreakInstructionResult() => NonBreakInstructionResult(new List<BigInteger>(), new List<BigInteger>());
         public static InstructionResult NonBreakInstructionResult(BigInteger input) => NonBreakInstructionResult(new List<BigInteger> {input}, new List<BigInteger>());
         public static InstructionResult NonBreakInstructionResult(List<BigInteger> input) => NonBreakInstructionResult(input, new List<BigInteger>());
         public static InstructionResult NonBreakInstructionResult(List<BigInteger> input, List<BigInteger> output) => new InstructionResult(input, output, false, false);
@@ -31,5 +32,7 @@ namespace Day5SunnyWithAChanceOfAsteroids
 
         public static InstructionResult JoinResults(InstructionResult phaseSetting, InstructionResult input) =>
             new InstructionResult(phaseSetting.Inputs.Concat(input.Inputs).ToList(), input.Output, input.IsBreakInstruction, input.IsWaitingForInput);
+
+        
     }
 }
