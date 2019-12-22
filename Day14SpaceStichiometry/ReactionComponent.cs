@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Numerics;
 
 namespace Day14SpaceStoichiometry
 {
     public class ReactionComponent
     {
-        public int Quantity { get; }
+        public BigInteger Quantity { get; }
         public string Name { get; }
 
         public ReactionComponent(string input)

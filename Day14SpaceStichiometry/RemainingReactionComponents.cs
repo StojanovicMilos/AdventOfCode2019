@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace Day14SpaceStoichiometry
 {
     public class RemainingReactionComponents
     {
-        private readonly Dictionary<string, int> _remaining = new Dictionary<string, int>();
+        private readonly Dictionary<string, BigInteger> _remaining = new Dictionary<string, BigInteger>();
 
-        public int GetNumberOf(string componentName) => _remaining.ContainsKey(componentName) ? _remaining[componentName] : 0;
+        public BigInteger GetNumberOf(string componentName) => _remaining.ContainsKey(componentName) ? _remaining[componentName] : 0;
 
-        public void Add(string componentName, int count)
+        public void Add(string componentName, BigInteger count)
         {
             if (count < 0) throw new ArgumentOutOfRangeException(nameof(count));
             if(count == 0) return;
@@ -19,7 +20,7 @@ namespace Day14SpaceStoichiometry
                 _remaining[componentName] = count;
         }
 
-        public void Remove(string componentName, int count)
+        public void Remove(string componentName, BigInteger count)
         {
             if (count < 0) throw new ArgumentOutOfRangeException(nameof(count));
             if(count == 0) return;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 
 namespace Day14SpaceStoichiometry
 {
@@ -17,29 +18,29 @@ namespace Day14SpaceStoichiometry
             Output = output ?? throw new ArgumentNullException(nameof(output));
         }
 
-        public int GetNumberOfOresNeededForOutput(List<Reaction> allReactions, int neededQuantity, RemainingReactionComponents remainingReactionComponents)
+        public BigInteger GetNumberOfOresNeededForOutput(List<Reaction> allReactions, BigInteger neededQuantity, RemainingReactionComponents remainingReactionComponents)
         {
-            int numberOfNeededReactions = (int) Math.Ceiling((decimal) neededQuantity / Output.Quantity);
+            BigInteger numberOfNeededReactions = new BigInteger(Math.Ceiling((decimal) neededQuantity / (decimal) Output.Quantity));
             if (numberOfNeededReactions == 0)
                 return 0;
 
-            int extraOutputComponents = numberOfNeededReactions * Output.Quantity - neededQuantity;
+            BigInteger extraOutputComponents = numberOfNeededReactions * Output.Quantity - neededQuantity;
             remainingReactionComponents.Add(Output.Name, extraOutputComponents);
 
-            int sum = 0;
+            BigInteger sum = 0;
             foreach (var reactionComponent in _inputs)
             {
                 if (reactionComponent.Name == "ORE")
                 {
-                    int usedOre = numberOfNeededReactions * reactionComponent.Quantity;
+                    BigInteger usedOre = numberOfNeededReactions * reactionComponent.Quantity;
                     sum += usedOre;
                 }
                 else
                 {
-                    int remainingReactionComponentQuantity = remainingReactionComponents.GetNumberOf(reactionComponent.Name);
+                    BigInteger remainingReactionComponentQuantity = remainingReactionComponents.GetNumberOf(reactionComponent.Name);
                     if (numberOfNeededReactions * reactionComponent.Quantity <= remainingReactionComponentQuantity) //we already have enough quantity of this component from previous reactions
                     {
-                        int usedQuantity = numberOfNeededReactions * reactionComponent.Quantity;
+                        BigInteger usedQuantity = numberOfNeededReactions * reactionComponent.Quantity;
                         remainingReactionComponents.Remove(reactionComponent.Name, usedQuantity);
                     }
                     else
