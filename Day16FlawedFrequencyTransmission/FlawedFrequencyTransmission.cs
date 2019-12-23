@@ -32,5 +32,16 @@ namespace Day16FlawedFrequencyTransmission
 
             return returnValue;
         }
+
+        public string CalculatePartTwoOutputSignalFor(string input, int numberOfPhases)
+        {
+            input = string.Join("", Enumerable.Repeat(input, 10000));
+
+            string result = CalculateOutputSignalFor(input, numberOfPhases);
+
+            int offset = Convert.ToInt32(input.Substring(0, 7));
+
+            return result.Substring(offset, 8);
+        }
     }
 }
